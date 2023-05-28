@@ -4,9 +4,91 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap"
+			rel="stylesheet"
+		/>
 		<title>Document</title>
 	</head>
 	<body>
-		<h1>Title</h1>
+		<div class="header"></div>
+		<div class="chat">
+			<div class="chat-message chat-message-user">
+				<div class="wrap">
+					<p class="time"><span class="js-time">21:51</span></p>
+					<p class="text">Ой, я дозвонился, вы действительно Ангелы??</p>
+				</div>
+			</div>
+			<div class="chat-message chat-message-bot">
+				<div class="wrap">
+					<p class="time">
+						<span class="author">Ангел</span>
+						&bull;
+						<span class="js-time">21:51</span>
+					</p>
+					<div class="text-wrap">
+						<img class="bot-icon" src="angel_colored.png" alt="" />
+						<p class="text">Да, мы Ангелы!</p>
+					</div>
+				</div>
+			</div>
+			<div class="chat-message chat-message-user">
+				<div class="wrap">
+					<p class="time"><span class="js-time">21:51</span></p>
+					<p class="text">Ой, как завлекательно! А это правда?</p>
+				</div>
+			</div>
+			<div class="chat-message chat-message-bot">
+				<div class="wrap">
+					<p class="time">
+						<span class="author">Ангел</span>
+						&bull;
+						<span class="js-time">21:51</span>
+					</p>
+					<div class="text-wrap">
+						<img class="bot-icon" src="angel_colored.png" alt="" />
+						<p class="text">Правда, правда</p>
+					</div>
+				</div>
+			</div>
+			<div class="chat-message chat-message-user">
+				<div class="wrap">
+					<p class="time"><span class="js-time">21:51</span></p>
+					<p class="text">Великолепно, а что вы умеете?</p>
+				</div>
+			</div>
+			<div class="chat-message chat-message-bot">
+				<div class="wrap">
+					<p class="time">
+						<span class="author">Ангел</span>
+						&bull;
+						<span class="js-time">21:51</span>
+					</p>
+					<div class="text-wrap">
+						<img class="bot-icon" src="angel_colored.png" alt="" />
+						<p class="text">
+							Пока ничего особенного, ждём доработку, но потом...
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="message"></div>
+		<div class="footer"></div>
 	</body>
+	<script>
+		const date = new Date();
+
+		const minutes = date.getMinutes();
+		const hours = date.getHours();
+
+		const timeItems = document.getElementsByClassName("js-time");
+
+		for (const item of timeItems) {
+			item.innerHTML = `${hours}:${minutes}`;
+		}
+	</script>
 </html>
