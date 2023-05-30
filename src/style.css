@@ -1,6 +1,6 @@
 :root {
-	--color-purple: rgba(113, 131, 238, 1);
-	--color-purple-opacity: rgba(113, 131, 238, 0.5);
+	--color-purple: rgb(110, 127, 252);
+	--color-purple-opacity: rgba(110, 127, 252, 0.5);
 	--color-background: #f5f5f7;
 	--color-text-dark: #383c4c;
 	--color-text-light: #fff;
@@ -19,7 +19,7 @@
 
 body {
 	background-color: var(--color-background);
-	font-family: Manrope;
+	font-family: Inter;
 	margin: 0;
 	min-height: 100vh;
 }
