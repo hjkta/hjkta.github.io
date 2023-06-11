@@ -107,6 +107,12 @@ body {
 	border-radius: 10px;
 }
 
+.chat-message .text a,
+.chat-message .text a:visited,
+.chat-message .text a:focus {
+	color: var(--color-text-dark);
+}
+
 /* time */
 
 .chat-message .time {
