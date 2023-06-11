@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {
-		"serve": "npx serve ./src"
+		"serve": "npx serve ./"
 	},
 	"author": "",
 	"license": "ISC",
