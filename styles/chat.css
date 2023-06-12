@@ -110,7 +110,7 @@ body {
 .chat-message .text a,
 .chat-message .text a:visited,
 .chat-message .text a:focus {
-	color: var(--color-text-dark);
+	color: var(--color-purple);
 }
 
 /* time */
@@ -151,6 +151,10 @@ body {
 	background-color: var(--color-white);
 	color: var(--color-text-dark);
 	border-bottom-left-radius: 0;
+}
+
+.chat-message-bot .text .highlight {
+	color: var(--color-purple);
 }
 
 .chat-message-bot .time {
