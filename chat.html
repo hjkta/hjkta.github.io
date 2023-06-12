@@ -21,113 +21,7 @@
 			<h1 class="title">Чат</h1>
 			<img class="phone-icon" src="/img/phone.svg" alt="" />
 		</div>
-		<div class="chat">
-			<div class="chat-message chat-message-user">
-				<div class="wrap">
-					<p class="time"><span class="js-time">00:00</span></p>
-					<p class="text">Хочу кредит</p>
-				</div>
-			</div>
-			<div class="chat-message chat-message-bot">
-				<div class="wrap">
-					<p class="time">
-						<span class="author">Ангел</span>
-						&bull;
-						<span class="js-time">00:00</span>
-					</p>
-					<div class="text-wrap">
-						<img class="bot-icon" src="/img/angel-colored.png" alt="" />
-						<p class="text">
-							Здравствуйте! С заботой о вас мы приготовили предложение на кредит
-							наличными на ваши цели для себя, семьи и дома.
-							<br /><br />Это совершенно новые условия, они приятно вас удивят:
-							<br />• Кредит до 3 000 000 руб. <br />• Платёж до 52 860 руб.
-							<br />• Срок до 84 мес. <br /><br />Заполнить заявку удобно,
-							ответьте на пару вопросов.
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="chat-message chat-message-bot">
-				<div class="wrap">
-					<p class="time">
-						<span class="author">Ангел</span>
-						&bull;
-						<span class="js-time">00:00</span>
-					</p>
-					<div class="text-wrap">
-						<img class="bot-icon" src="/img/angel-colored.png" alt="" />
-						<p class="text">Ваш доход?</p>
-					</div>
-				</div>
-			</div>
-			<div class="chat-message chat-message-user">
-				<div class="wrap">
-					<p class="time"><span class="js-time">00:00</span></p>
-					<p class="text">100 000</p>
-				</div>
-			</div>
-			<div class="chat-message chat-message-bot">
-				<div class="wrap">
-					<p class="time">
-						<span class="author">Ангел</span>
-						&bull;
-						<span class="js-time">00:00</span>
-					</p>
-					<div class="text-wrap">
-						<img class="bot-icon" src="/img/angel-colored.png" alt="" />
-						<p class="text">
-							Выберите предложение и отправьте цифру 1, 2 или 3:
-							<br />
-							<br />1. <span class="highlight">0% переплата</span> - вернем все
-							проценты при выполнении условий акции «Снижаем до О» <br />2.
-							<span class="highlight">2,9% годовых</span> - снизим ежемесячный
-							платёж с услугой «Гарантия оптимальной ставки» <br />3. 24,9%
-							годовых - кредит на стандартных условиях
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="chat-message chat-message-user">
-				<div class="wrap">
-					<p class="time"><span class="js-time">00:00</span></p>
-					<p class="text">1</p>
-				</div>
-			</div>
-			<div class="chat-message chat-message-bot">
-				<div class="wrap">
-					<p class="time">
-						<span class="author">Ангел</span>
-						&bull;
-						<span class="js-time">00:00</span>
-					</p>
-					<div class="text-wrap">
-						<img class="bot-icon" src="/img/angel-colored.png" alt="" />
-						<p class="text">
-							Нужна минута и мы узнаем решение по заявке.<br /><br />Предлагаем
-							во время рассмотрения подтвердить учетную запись на госуслугах, в
-							дальнейшем это позволит вам получать большую сумму кредита.
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="chat-message chat-message-bot">
-				<div class="wrap">
-					<p class="time">
-						<span class="author">Ангел</span>
-						&bull;
-						<span class="js-time">00:00</span>
-					</p>
-					<div class="text-wrap">
-						<img class="bot-icon" src="/img/angel-colored.png" alt="" />
-						<p class="text">
-							Поздравляю, ваша заявка на кредит одобрена!<br /><br />
-							<a href="calc.html">Перейти к расчету суммы и платежа</a>
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
+		<div class="chat js-chat"></div>
 		<div class="footer">
 			<div class="message-box">
 				<div>
@@ -169,11 +63,205 @@
 
 		const minutes = date.getMinutes().toString();
 		const hours = date.getHours().toString();
+		const currentTime = `${hours.padStart(2, "0")}:${minutes.padStart(2, "0")}`;
 
-		const timeItems = document.getElementsByClassName("js-time");
+		const messages = [
+			`
+			<div class="chat-message chat-message-user">
+				<div class="wrap">
+					<p class="time"><span>${currentTime}</span></p>
+					<p class="text">Хочу кредит</p>
+				</div>
+			</div>
+			`,
+			`
+			<div class="chat-message chat-message-bot">
+				<div class="wrap">
+					<p class="time">
+						<span class="author">Ангел</span>
+						&bull;
+						<span>${currentTime}</span>
+					</p>
+					<div class="text-wrap">
+						<img class="bot-icon" src="/img/angel-colored.png" alt="" />
+						<p class="text">
+							Здравствуйте! С заботой о вас мы приготовили предложение на кредит
+							наличными на ваши цели для себя, семьи и дома.
+							<br /><br />Это совершенно новые условия, они приятно вас удивят:
+							<br />• Кредит до 3 000 000 руб. <br />• Платёж до 52 860 руб.
+							<br />• Срок до 84 мес. <br /><br />Заполнить заявку удобно,
+							ответьте на пару вопросов.
+						</p>
+					</div>
+				</div>
+			</div>
+			`,
+			`
+			<div class="chat-message chat-message-bot">
+				<div class="wrap">
+					<p class="time">
+						<span class="author">Ангел</span>
+						&bull;
+						<span>${currentTime}</span>
+					</p>
+					<div class="text-wrap">
+						<img class="bot-icon" src="/img/angel-colored.png" alt="" />
+						<p class="text">Ваш доход?</p>
+					</div>
+				</div>
+			</div>
+			`,
+			`
+			<div class="chat-message chat-message-user">
+				<div class="wrap">
+					<p class="time"><span>${currentTime}</span></p>
+					<p class="text">100 000</p>
+				</div>
+			</div>
+			`,
+			`
+			<div class="chat-message chat-message-bot">
+				<div class="wrap">
+					<p class="time">
+						<span class="author">Ангел</span>
+						&bull;
+						<span>${currentTime}</span>
+					</p>
+					<div class="text-wrap">
+						<img class="bot-icon" src="/img/angel-colored.png" alt="" />
+						<p class="text">
+							Выберите предложение и отправьте цифру 1, 2 или 3:
+							<br />
+							<br />1. <span class="highlight">0% переплата</span> - вернем все
+							проценты при выполнении условий акции «Снижаем до О» <br />2.
+							<span class="highlight">2,9% годовых</span> - снизим ежемесячный
+							платёж с услугой «Гарантия оптимальной ставки» <br />3. 24,9%
+							годовых - кредит на стандартных условиях
+						</p>
+					</div>
+				</div>
+			</div>
+			`,
+			`
+			<div class="chat-message chat-message-user">
+				<div class="wrap">
+					<p class="time"><span>${currentTime}</span></p>
+					<p class="text">1</p>
+				</div>
+			</div>
+			`,
+			`
+			<div class="chat-message chat-message-bot">
+				<div class="wrap">
+					<p class="time">
+						<span class="author">Ангел</span>
+						&bull;
+						<span>${currentTime}</span>
+					</p>
+					<div class="text-wrap">
+						<img class="bot-icon" src="/img/angel-colored.png" alt="" />
+						<p class="text">
+							Нужна минута и мы узнаем решение по заявке.<br /><br />Предлагаем
+							во время рассмотрения подтвердить учетную запись на госуслугах, в
+							дальнейшем это позволит вам получать большую сумму кредита.
+						</p>
+					</div>
+				</div>
+			</div>
+			`,
+			`
+			<div class="chat-message chat-message-bot">
+				<div class="wrap">
+					<p class="time">
+						<span class="author">Ангел</span>
+						&bull;
+						<span>${currentTime}</span>
+					</p>
+					<div class="text-wrap">
+						<img class="bot-icon" src="/img/angel-colored.png" alt="" />
+						<p class="text">
+							Поздравляю, ваша заявка на кредит одобрена!<br /><br />
+							<a href="calc.html">Перейти к расчету суммы и платежа</a>
+						</p>
+					</div>
+				</div>
+			</div>
+			`,
+		];
 
-		for (const item of timeItems) {
-			item.innerHTML = `${hours.padStart(2, "0")}:${minutes.padStart(2, "0")}`;
-		}
+		let messageIndex = 0;
+
+		const chatBox = document.getElementsByClassName("js-chat")[0];
+
+		new Promise((resolve, reject) => {
+			resolve(messages[messageIndex]);
+		})
+			.then((result) => {
+				chatBox.insertAdjacentHTML("beforeend", result);
+				chatBox.scrollTop += 500;
+
+				return new Promise((resolve, reject) => {
+					messageIndex++;
+					setTimeout(() => resolve(messages[messageIndex]), 2000);
+				});
+			})
+			.then((result) => {
+				chatBox.insertAdjacentHTML("beforeend", result);
+				chatBox.scrollTop += 500;
+
+				return new Promise((resolve, reject) => {
+					messageIndex++;
+					setTimeout(() => resolve(messages[messageIndex]), 2000);
+				});
+			})
+			.then((result) => {
+				chatBox.insertAdjacentHTML("beforeend", result);
+				chatBox.scrollTop += 500;
+
+				return new Promise((resolve, reject) => {
+					messageIndex++;
+					setTimeout(() => resolve(messages[messageIndex]), 2000);
+				});
+			})
+			.then((result) => {
+				chatBox.insertAdjacentHTML("beforeend", result);
+				chatBox.scrollTop += 500;
+
+				return new Promise((resolve, reject) => {
+					messageIndex++;
+					setTimeout(() => resolve(messages[messageIndex]), 2000);
+				});
+			})
+			.then((result) => {
+				chatBox.insertAdjacentHTML("beforeend", result);
+				chatBox.scrollTop += 500;
+
+				return new Promise((resolve, reject) => {
+					messageIndex++;
+					setTimeout(() => resolve(messages[messageIndex]), 2000);
+				});
+			})
+			.then((result) => {
+				chatBox.insertAdjacentHTML("beforeend", result);
+				chatBox.scrollTop += 500;
+
+				return new Promise((resolve, reject) => {
+					messageIndex++;
+					setTimeout(() => resolve(messages[messageIndex]), 2000);
+				});
+			})
+			.then((result) => {
+				chatBox.insertAdjacentHTML("beforeend", result);
+				chatBox.scrollTop += 500;
+
+				return new Promise((resolve, reject) => {
+					messageIndex++;
+					setTimeout(() => resolve(messages[messageIndex]), 2000);
+				});
+			})
+			.then((result) => {
+				chatBox.insertAdjacentHTML("beforeend", result);
+				chatBox.scrollTop += 500;
+			});
 	</script>
 </html>
