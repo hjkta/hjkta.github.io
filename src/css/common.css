@@ -86,7 +86,7 @@ table tbody td.highlight {
 .header {
   background-color: var(--background-color);
   color: var(--white-color);
-  padding: 30px 12px;
+  padding: 30px 20px;
 }
 
 .content {
