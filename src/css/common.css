@@ -47,7 +47,6 @@ h3.bordered {
 }
 
 h4 {
-  color: var(--primary-color);
   font-size: 18px;
   margin-bottom: 10px;
 }
@@ -83,6 +82,10 @@ table tbody td.highlight {
   background-color: rgba(215, 252, 181, 1);
 }
 
+dl dt {
+  font-weight: 600;
+}
+
 .header {
   background-color: var(--background-color);
   color: var(--white-color);
@@ -114,6 +117,14 @@ span.highlight {
   background-color: rgba(185, 253, 48, 1);
   border-radius: 10px;
   padding: 3px 5px;
+}
+
+.hero {
+  background-color: rgba(230, 222, 209, 0.6);
+  border: 1px solid var(--primary-color);
+  box-shadow: 6px 6px 6px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+  padding: 6px 8px;
 }
 
 .mb-1 {
