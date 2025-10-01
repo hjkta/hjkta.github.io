@@ -10,11 +10,118 @@
 
 :root {
   --primary-color: rgba(108, 78, 44, 1);
+  --background-color: rgba(187, 163, 134, 0.8);
+  --white-color: rgba(255, 255, 255, 1);
+  --text-color: rgba(0, 0, 0, 1);
 }
 
 body {
+  height: 100vh;
+  background: url(../img/background-dark.jpg);
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+}
+
+h1 {
+  font-weight: 600;
+  line-height: 1.1;
+  text-align: center;
+  font-size: 28px;
+}
+
+h2 {
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+  color: var(--primary-color);
+  margin-bottom: 12px;
+}
+h3.bordered {
+  border-bottom: 1px solid var(--primary-color);
+}
+
+h4 {
+  color: var(--primary-color);
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+p {
+  line-height: 1.2;
+}
+
+li {
+  line-height: 1.2;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table thead th {
+  background-color: rgba(237, 232, 224, 0.83);
+  text-align: left;
+  padding: 8px 4px;
+}
+
+table tbody tr {
+  border-bottom: 1px solid var(--primary-color);
+}
+
+table tbody td {
+  padding: 8px 4px;
+  vertical-align: top;
+}
+table tbody td.highlight {
+  background-color: rgba(215, 252, 181, 1);
+}
+
+.header {
+  background-color: var(--background-color);
+  color: var(--white-color);
+  padding: 30px 0;
+}
+
+.content {
+  background: url(../img/background-light.jpg);
+  padding: 30px 12px;
+  margin: 0 20px;
+}
+
+.table-scroll {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  margin-left: -12px;
+  margin-right: -12px;
+}
+
+section.highlight {
+  background-color: rgba(230, 222, 209, 0.6);
+  margin-left: -12px;
+  margin-right: -12px;
+  padding: 10px 12px;
+}
+
+span.highlight {
+  background-color: rgba(185, 253, 48, 1);
+  border-radius: 10px;
+  padding: 3px 5px;
+}
+
+.mb-1 {
+  margin-bottom: 8px;
+}
+.mb-2 {
+  margin-bottom: 16px;
+}
+.mb-3 {
+  margin-bottom: 24px;
 }
